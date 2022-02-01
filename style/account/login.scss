@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Cinzel&family=Inconsolata:wght@300&family=Licorice&family=Major+Mono+Display&family=Nunito:wght@600&family=Open+Sans+Condensed:ital,wght@1,300&family=Righteous&family=Rubik:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&family=Space+Mono&family=Staatliches&display=swap");
+@mixin responsive($size) {
+  $phone: 576px;
+  $tablet: 768px;
+  @if ($size == small) {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+  @if ($size == medium) {
+    @media screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+}
+@mixin pos-absolute() {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html {
+  @include responsive(small) {
+    font-size: 12px;
+  }
+  @include responsive(medium) {
+    font-size: 14;
+  }
+}
+$tabcolor: white;
+main {
+  @include pos-absolute();
+  background-image: url("../../assets/login.jpg");
+  background-size: 100% 100%;
+  .bg-layout {
+    @include pos-absolute();
+    z-index: -1;
+  }
+  .active-tab {
+    border-bottom: 3px solid #946933 !important;
+    color: #946933 !important;
+  }
+  .form-container {
+    background-color: rgba(0, 0, 0, 0.712);
+    .form-tab {
+      height: 15%;
+      list-style: none;
+      li {
+        font-size: 1.5rem;
+        color: $tabcolor;
+        cursor: pointer;
+        font-family: "Audiowide", cursive;
+        text-align: center;
+        align-self: center;
+        border-bottom: 1px solid white;
+      }
+    }
+    .form-wrapper {
+      height: auto;
+      form {
+        height: 100%;
+        label {
+          font-size: 1rem;
+          font-family: "Righteous", cursive;
+        }
+        input {
+          border: none;
+          color: white;
+          border: 2px solid white;
+          background-color: transparent;
+          &:focus {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid white;
+          }
+          &[type="submit"] {
+            justify-content: center;
+            letter-spacing: 4px;
+            border: 2px solid #946933;
+            color: white;
+            font-family: "Audiowide", cursive;
+            &:hover {
+              background-color: #946933;
+              color: white;
+            }
+          }
+        }
+        small {
+          color: whitesmoke;
+        }
+      }
+    }
+  }
+}

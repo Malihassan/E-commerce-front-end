@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel&family=Inconsolata:wght@300&family=Licorice&family=Major+Mono+Display&family=Nunito:wght@600&family=Open+Sans+Condensed:ital,wght@1,300&family=Righteous&family=Rubik:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&family=Space+Mono&family=Staatliches&display=swap");
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14;
+  }
+}
+
+.modal {
+  left: 3%;
+  width: 95%;
+}
+
+.modal .modal-header {
+  border-bottom: 1px solid #7e7e7e;
+}
+
+.modal .modal-header .modal-title {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-family: "Major Mono Display", monospace;
+  text-align: center;
+}
+
+.modal .modal-body {
+  max-height: 250px;
+}
+
+.modal .modal-body .cart-item {
+  height: 80px;
+  border-bottom: 1px solid #7e7e7e;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .modal-body .cart-item .cart-item-body {
+  font-family: "Space Mono", monospace;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal .modal-body .cart-item .cart-item-body h4 {
+  font-size: 1rem;
+}
+
+.modal .modal-body .cart-item .cart-item-body label {
+  font-weight: bolder;
+}
+
+.modal .modal-body .cart-item .cart-item-body label span {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px 5px;
+}
+
+.modal .modal-body .cart-item .cart-item-body .cart-control {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.modal .modal-body .cart-item .cart-item-body .cart-control label {
+  padding: 5px;
+}
+
+.modal .modal-body .cart-item .cart-item-body .cart-control button {
+  width: 35px;
+  height: 30px;
+  text-align: center;
+  font-weight: bolder;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal .modal-body .cart-item .fav-delete i {
+  font-size: 1.8rem;
+}
+
+.modal .modal-body .cart-item .cart-item-img {
+  height: 100%;
+}
+
+.modal .modal-body .cart-item .cart-item-img img {
+  width: 80%;
+  height: 100%;
+  border-radius: 3px;
+  float: right;
+}
+
+.modal .modal-footer {
+  border-top: 1px solid #7e7e7e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Space Mono", monospace;
+}
+
+.modal .modal-footer label {
+  font-size: 1.2rem;
+}
+
+.modal .modal-footer .btn {
+  border: 1px solid black;
+  color: black;
+}
+
+.modal .modal-footer .btn:last-of-type {
+  color: white;
+  background-color: black;
+}
+/*# sourceMappingURL=modal.css.map */

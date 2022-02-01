@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel&family=Inconsolata:wght@300&family=Licorice&family=Major+Mono+Display&family=Nunito:wght@600&family=Open+Sans+Condensed:ital,wght@1,300&family=Righteous&family=Rubik:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&family=Space+Mono&family=Staatliches&display=swap");
+
+$navColor: white;
+
+@mixin responsive($size) {
+  $phone: 576px;
+  $tablet: 768px;
+  @if ($size == small) {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+  @if ($size == medium) {
+    @media screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+}
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html {
+  @include responsive(small) {
+    font-size: 12px;
+  }
+  @include responsive(medium) {
+    font-size: 14;
+  }
+}
+header {
+  position: fixed;
+  z-index: 99;
+}
+.container-header {
+  background-color: rgba(0, 34, 48, 0.849);
+  height: 60px;
+  @include flex-row();
+  justify-content: space-between;
+  .offcanvas-end {
+    @include responsive(small) {
+      width: 250px;
+    }
+  }
+  .offcanvas {
+    .category-list {
+      list-style: none;
+      li {
+        width: 95%;
+        border-bottom: 1px solid gray;
+        padding: 10px 0 10px 0;
+        margin-bottom: 7px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(231, 231, 231);
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+          font-size: 1rem;
+          font-family: "Space Mono", monospace;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  nav {
+    .cart-menu {
+      width: 20%;
+      @include flex-row();
+      justify-content: space-between;
+      button {
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        transition: all 200ms ease-in-out;
+        i {
+          color: white;
+          font-size: 30px;
+        }
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+    ul {
+      height: 100%;
+      @include flex-row();
+      justify-content: space-around;
+      li {
+        width: 120px;
+        text-align: center;
+        color: $navColor;
+        font-size: 1.2rem;
+        font-family: "Space Mono", monospace;
+        letter-spacing: 2px;
+        @include responsive(medium) {
+          font-size: 1.1rem;
+        }
+      }
+      li:after {
+        content: "";
+        display: block;
+        margin: auto;
+        height: 3px;
+        width: 0px;
+        background: transparent;
+        transition: width 0.5s ease, background-color 0.5s ease;
+      }
+      li:hover:after {
+        width: 100px;
+        background: $navColor;
+        @include responsive(small) {
+          width: 50px;
+        }
+      }
+      .dropdown-content {
+        display: none;
+        // width: 100px;
+        right: 0%;
+        left: -20%;
+        background-color: white;
+        opacity: 0.8;
+        cursor: pointer;
+        a {
+          width: 100%;
+          display: block;
+          font-family: "Space Mono", monospace;
+          letter-spacing: 2px;
+          font-size: 1rem;
+          border: none;
+          color: black;
+          border-bottom: 1px solid gray;
+        }
+        a:hover {
+          background-color: black;
+          color: white;
+          opacity: 0.6;
+        }
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown a:first-of-type {
+        @include flex-row();
+      }
+      i {
+        margin: 5px 0px 0px 5px;
+        font-size: 20px;
+      }
+      .mobile-nav {
+        list-style: none;
+        @include flex-row();
+        justify-content: space-around;
+        background-color: rgba(0, 55, 77, 0.486);
+        li {
+          padding: 5px 8px 5px 8px;
+          background-color: transparent;
+          border: none;
+          i {
+            color: white;
+            font-size: 25px;
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  .slider {
+    position: relative;
+    top: 0%;
+    i {
+      position: absolute;
+      font-size: 40px;
+      color: white;
+      background-color: rgba(0, 55, 77, 0.486);
+      border-radius: 2px;
+      top: 83%;
+      left: 90%;
+      transition: transform 500ms ease-in-out;
+      &:hover {
+        transform: translateY(20px);
+      }
+      @include responsive(small) {
+        display: none;
+      }
+    }
+    img {
+      height: 600px;
+      background-size: 100% 100%;
+      @include responsive(small) {
+        height: 350px;
+      }
+    }
+  }
+  .category-container {
+    height: 650px;
+    @include responsive(medium) {
+      height: auto;
+    }
+    background-color: rgb(221, 221, 221);
+    margin-top: 3rem;
+    .category-text {
+      height: 15%;
+      @include flex-column();
+      h5 {
+        font-size: 1.3rem;
+        color: rgb(48, 48, 48);
+        letter-spacing: 5px;
+        font-family: "Major Mono Display", monospace;
+      }
+      label {
+        color: rgb(88, 88, 88);
+        margin-top: 5px;
+        font-size: 1.1rem;
+        font-family: "Staatliches", cursive;
+        letter-spacing: 2px;
+      }
+    }
+    .category {
+      height: 75%;
+      margin-bottom: 2rem;
+      @include flex-row();
+      // flex-wrap: wrap;
+      @include responsive(medium) {
+        @include flex-column();
+      }
+      .left,
+      .right {
+        height: 100%;
+        position: relative;
+        @include responsive(medium) {
+          margin-bottom: 5px;
+          height: 50%;
+          width: 60%;
+        }
+        @include responsive(small) {
+          width: 70%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          @include responsive(medium) {
+            height: 300px;
+          }
+        }
+        .category-content:hover button {
+          display: block;
+        }
+        .category-content {
+          background-color: rgba(0, 0, 0, 0.527);
+          position: absolute;
+          top: 0%;
+          bottom: 0%;
+          left: 0%;
+          right: 0%;
+          @include flex-column();
+          h3 {
+            letter-spacing: 5px;
+            font-family: "Cinzel", serif;
+          }
+          button {
+            display: none;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            background-color: transparent;
+            text-transform: uppercase;
+            padding: 10px 25px 10px 25px;
+            font-weight: 500;
+            transform: translateY(70%);
+            transition: all 1s ease-in-out;
+            animation: upDown 1.2s ease-in-out;
+            @include responsive(medium) {
+              display: block;
+            }
+          }
+          button:hover {
+            background-color: white;
+            color: black !important ;
+          }
+
+          @keyframes upDown {
+            from {
+              transform: translateY(-90%);
+            }
+            to {
+              transform: translateY(70%);
+            }
+          }
+        }
+      }
+      .middle {
+        height: 100%;
+        width: 31%;
+        @extend .left;
+        #middle-top,
+        #middle-bottom {
+          height: 48%;
+          position: relative;
+        }
+        @include responsive(medium) {
+          width: 60%;
+        }
+        @include responsive(small) {
+          width: 70%;
+        }
+      }
+    }
+  }
+  .features {
+    align-self: center;
+    .feature-item {
+      padding-bottom: 2rem;
+      @include flex-row();
+      justify-content: flex-start;
+      i {
+        font-size: 40px;
+        color: rgb(48, 48, 48);
+      }
+      .feature-content {
+        align-self: flex-start;
+        h4 {
+          font-size: 1rem;
+          @include responsive(medium) {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  
+}
+footer {
+  @include flex-row();
+  font-size: 1rem;
+  height: 50px;
+  background-color: rgb(221, 221, 221);
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  span {
+    font-family: "Major Mono Display", monospace;
+    font-weight: 500;
+  }
+  @include responsive(medium) {
+    font-size: 1rem;
+  }
+  @include responsive(small) {
+    font-size: 0.8rem;
+  }
+}
